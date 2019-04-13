@@ -2,7 +2,6 @@
 
 ## Tools
 
-### Create bootable Windows OS
 |Host OS| Target OS | Tools |
 |--|--|--|
 | Windows | Windows | [https://rufus.ie/](https://rufus.ie/) |
