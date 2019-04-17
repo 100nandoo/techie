@@ -17,8 +17,11 @@ My personal website directory.
 
 ## Knowledge
 
-### Techic
+### Techie
 
 #### Vim
 * [https://vim.rtorr.com/](https://vim.rtorr.com/) - Cheatsheet
 * [https://vim.fandom.com/wiki/Avoid_the_escape_key](https://vim.fandom.com/wiki/Avoid_the_escape_key) - Useful remapping
+
+### Adblock
+* [Nano Defender](https://jspenguin2017.github.io/uBlockProtector/#extra-installation-steps-for-ublock-origin)
