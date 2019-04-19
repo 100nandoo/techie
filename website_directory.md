@@ -5,6 +5,7 @@ My personal website directory.
 
 ### Books
 * [https://www.ccel.org](https://www.ccel.org/) - Free Christian Books
+* [https://standardebooks.org/](https://standardebooks.org/) - Free Books
 
 ### Torrent
 * [https://thepiratebay.org](https://thepiratebay.org) - Most popular Torrent sites
