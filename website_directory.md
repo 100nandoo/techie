@@ -33,6 +33,7 @@ My personal website directory.
 ### Others
 
 * [Y Combinator Top Companies List](https://www.ycombinator.com/topcompanies/)
+* [https://fiftysevendegreesofrad.github.io/hard-comp-fi-fiction-list/](https://fiftysevendegreesofrad.github.io/hard-comp-fi-fiction-list/)  - hard compstea sci-fi
 
 ### Marketplace
 
