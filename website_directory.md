@@ -34,6 +34,7 @@ My personal website directory.
 
 * [Y Combinator Top Companies List](https://www.ycombinator.com/topcompanies/)
 * [https://fiftysevendegreesofrad.github.io/hard-comp-fi-fiction-list/](https://fiftysevendegreesofrad.github.io/hard-comp-fi-fiction-list/)  - hard compstea sci-fi
+* [http://www.kadingirra.com/palaces.html](http://www.kadingirra.com/palaces.html) - City of Babylon 3D
 
 ### Marketplace
 
