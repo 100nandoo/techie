@@ -33,3 +33,7 @@ My personal website directory.
 ### Others
 
 * [Y Combinator Top Companies List](https://www.ycombinator.com/topcompanies/)
+
+### Marketplace
+
+* [https://www.g2a.com/en/](https://www.g2a.com/en/) - Games Marketplace
