@@ -1,8 +1,7 @@
-
 # Git-Flow plugin
 
 | Alias   | Command                    | Description                            |
-|---------|----------------------------|----------------------------------------|
+| ------- | -------------------------- | -------------------------------------- |
 | `gfl`   | `git flow`                 | Git-Flow command                       |
 | `gfli`  | `git flow init`            | Initialize git-flow repository         |
 | `gcd`   | `git checkout develop`     | Check out develop branch               |
