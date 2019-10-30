@@ -15,6 +15,10 @@
 ### Resource
 
 - [gatsby-starter-gcn](https://github.com/ryanwiemer/gatsby-starter-gcn)
+- [dev-style](https://lumen-v2.netlify.com/)
+- [bold-minimal](https://gatsby-london.netlify.com/)
+- [narative](https://novela.narative.co/)
+- 
 
 ### References
 
@@ -27,5 +31,3 @@
 ##### Nextjs based
 
 1. [https://dev.to/jolvera/rebuilding-my-blog-with-next-js-1h84](https://dev.to/jolvera/rebuilding-my-blog-with-next-js-1h84)
-
-
