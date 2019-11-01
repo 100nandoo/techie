@@ -30,5 +30,5 @@
 - [showcase](https://www.gatsbyjs.org/showcase/?filters%5B0%5D=Blog)
 - [starter](https://www.gatsbyjs.org/starters/?v=2)
 - [recipes](https://www.gatsbyjs.org/docs/recipes/)
-
-
+- [https://www.gatsbyjs.org/docs/multi-core-builds/](https://www.gatsbyjs.org/docs/multi-core-builds/)
+- [https://reactjs.org/docs/faq-structure.html](https://reactjs.org/docs/faq-structure.html)
