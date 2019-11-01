@@ -32,3 +32,4 @@
 - [recipes](https://www.gatsbyjs.org/docs/recipes/)
 - [https://www.gatsbyjs.org/docs/multi-core-builds/](https://www.gatsbyjs.org/docs/multi-core-builds/)
 - [https://reactjs.org/docs/faq-structure.html](https://reactjs.org/docs/faq-structure.html)
+- [https://devhints.io/yarn](https://devhints.io/yarn)
