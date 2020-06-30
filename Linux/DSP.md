@@ -44,10 +44,12 @@ pacmd load-module module-ladspa-sink sink_name=dsp master=(module-name) plugin=l
 ```
 .ifexists module-ladspa-sink.so
 .nofail
+# this line is the same as the one on `Load DSP module` section
 load-module module-ladspa-sink sink_name=dsp master=alsa_output.pci-0000_28_00.4.analog-stereo plugin=ladspa_dsp label=ladspa_dsp
 .fail
 .endif
 
+# Sink index number can be seen on `pacmd list-sinks`
 set-default-sink 2
 ```
 
