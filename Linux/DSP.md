@@ -5,8 +5,8 @@
 ```
 INSTALL DEPENDENCIES
 
-sudo apt-get update && sudo apt install build-essential pkg-config git ladspa-sdk fftw3 fftw3-dev libzita-convolver3 libzita-convolver-dev 
-sudo apt install libsndfile1 libsndfile1-dev libavcodec56 libavcodec-dev
+sudo apt-get update && sudo apt install build-essential pkg-config git ladspa-sdk fftw3 fftw3-dev libzita-convolver-dev 
+sudo apt install libsndfile1 libsndfile1-dev libavcodec58 libavcodec-dev
 sudo apt-get install libavcodec-dev --fix-missing
 sudo apt-get install libavformat-dev libasound2-dev libao-common libao-dev libmad0-dev
 
