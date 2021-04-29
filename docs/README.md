@@ -1,3 +1,3 @@
-# techie
+# Main
 
 All about tech stuff
