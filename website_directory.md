@@ -40,3 +40,9 @@ My personal website directory.
 ### Marketplace
 
 * [https://www.g2a.com/en/](https://www.g2a.com/en/) - Games Marketplace
+
+
+### Portfolio Inspiration
+* [Mario Kandut](https://www.mariokandut.com/)
+* [Patrick Lehmann](https://patlehmann1.github.io/react_portfolio/)
+* [Olaolu](https://olaolu.dev/)
