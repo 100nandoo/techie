@@ -8,10 +8,6 @@
 * [The Smart Home Journey](https://thesmarthomejourney.com/2020/05/11/guide-zigbee2mqtt/)
 * [Not Enough Tech](https://notenoughtech.com/home-automation/ikea-tradfri-socket-in-nodered/)
 
-#### Plugins
-* [mermaid2](https://github.com/fralau/mkdocs-mermaid2-plugin#automatic)
-* [autolinks](https://github.com/midnightprioriem/mkdocs-autolinks-plugin)
-
 
 #### Guide
 ```sh
