@@ -10,6 +10,7 @@
 * [PiGallery2](https://github.com/bpatrik/PiGallery2/) - Photo Gallery
 * [Duplicati](https://github.com/duplicati/duplicati) - Backup Desktop
 * [Resticker](https://github.com/djmaze/resticker) - Restic backup via docker
+* [Filebrowser](https://github.com/filebrowser/filebrowser) - Web file browser
 
 
 ## Resources
