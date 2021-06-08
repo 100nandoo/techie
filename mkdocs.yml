@@ -25,6 +25,9 @@ plugins:
   - search:
       lang:
         - en
-        - vi
   - mermaid2
   - autolinks
+
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences
