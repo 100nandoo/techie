@@ -32,3 +32,5 @@ markdown_extensions:
   - pymdownx.highlight
   - pymdownx.superfences
   - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.keys
