@@ -300,30 +300,30 @@
 <li><a href="https://notenoughtech.com/home-automation/ikea-tradfri-socket-in-nodered/">Not Enough Tech</a></li>
 </ul>
 <h4 id="guide">Guide</h4>
-<pre><code class="language-sh"># Connect through ssh
+<div class="highlight"><pre><span></span><code><span class="c1"># Connect through ssh</span>
 ssh pi@raspberrypi.local
 
-# Config
+<span class="c1"># Config</span>
 sudo raspi-config
 
-# Enable vnc
-1. Go to raspi-config &gt; Interface &gt; Enable vnc
-2. type `vncserver`
+<span class="c1"># Enable vnc</span>
+<span class="m">1</span>. Go to raspi-config &gt; Interface &gt; Enable vnc
+<span class="m">2</span>. <span class="nb">type</span> <span class="sb">`</span>vncserver<span class="sb">`</span>
 
-# Enable vn autostart at boot
-cd ~
-cd .config
+<span class="c1"># Enable vn autostart at boot</span>
+<span class="nb">cd</span> ~
+<span class="nb">cd</span> .config
 mkdir autostart
-cd autostart
+<span class="nb">cd</span> autostart
 nano tightvnc.desktop
 
-# Add this text
-[Desktop Entry]
-Type=Application
-Name=TightVNC
-Exec=vncserver :1
-StartupNotify=false
-</code></pre>
+<span class="c1"># Add this text</span>
+<span class="o">[</span>Desktop Entry<span class="o">]</span>
+<span class="nv">Type</span><span class="o">=</span>Application
+<span class="nv">Name</span><span class="o">=</span>TightVNC
+<span class="nv">Exec</span><span class="o">=</span>vncserver :1
+<span class="nv">StartupNotify</span><span class="o">=</span><span class="nb">false</span>
+</code></pre></div>
 </article>
 </div>
 </div>

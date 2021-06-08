@@ -340,37 +340,37 @@
 <article class="md-content__inner md-typeset">
 <h1 id="enable-high-quality-audio-linux">Enable High Quality Audio Linux</h1>
 <p>First you have to do little bit of tweaking of the Pulse configuration, to match your preference by creating the daemon.conf file in your home config directory:</p>
-<pre><code class="language-shell">nano ~/.config/pulse/daemon.conf
-</code></pre>
+<div class="highlight"><pre><span></span><code>nano ~/.config/pulse/daemon.conf
+</code></pre></div>
 <p>Or you can directly modify <em>/etc/pulse/daemon.conf</em>. Although be careful and have a backup of original configuration to restore if you messed it up.</p>
 <p>And add or modify below options:</p>
-<pre><code class="language-bash">default-sample-format = float32le
-default-sample-rate = 48000
-alternate-sample-rate = 44100
-default-sample-channels = 2
-default-channel-map = front-left,front-right
-default-fragments = 2
-default-fragment-size-msec = 125
-resample-method = soxr-vhq
-enable-lfe-remixing = no
-high-priority = yes
-nice-level = -11
-realtime-scheduling = yes
-realtime-priority = 9
-rlimit-rtprio = 9
-daemonize = no
-</code></pre>
+<div class="highlight"><pre><span></span><code>default-sample-format <span class="o">=</span> float32le
+default-sample-rate <span class="o">=</span> <span class="m">48000</span>
+alternate-sample-rate <span class="o">=</span> <span class="m">44100</span>
+default-sample-channels <span class="o">=</span> <span class="m">2</span>
+default-channel-map <span class="o">=</span> front-left,front-right
+default-fragments <span class="o">=</span> <span class="m">2</span>
+default-fragment-size-msec <span class="o">=</span> <span class="m">125</span>
+resample-method <span class="o">=</span> soxr-vhq
+enable-lfe-remixing <span class="o">=</span> no
+high-priority <span class="o">=</span> yes
+nice-level <span class="o">=</span> -11
+realtime-scheduling <span class="o">=</span> yes
+realtime-priority <span class="o">=</span> <span class="m">9</span>
+rlimit-rtprio <span class="o">=</span> <span class="m">9</span>
+<span class="nv">daemonize</span> <span class="o">=</span> no
+</code></pre></div>
 <h2 id="what-are-these-configurations-and-what-they-do">What are these configurations and what they do</h2>
 <h3 id="default-sample-format">default-sample-format</h3>
 <p>The default sampling format of the sampler. The quality will be different for each sample format. For me, <em>float32le</em> appears to be producing the highest quality of sound.
 When determining sample format you must select it depending on your CPU architecture’s byte order or also called Endianness. You can determine your CPU’s byte order by using below command:</p>
-<pre><code class="language-shell">$ lscpu | grep 'Byte Order'
+<div class="highlight"><pre><span></span><code>$ lscpu <span class="p">|</span> grep <span class="s1">'Byte Order'</span>
 Byte Order:          Little Endian
-</code></pre>
+</code></pre></div>
 <p>In my case it’s <em>Little Endian</em> hence I have selected <em>float32le</em>. If your output returns <em>Big Endian</em> then select <em>float32be</em> sampling format.</p>
 <p>Available sample formats:</p>
-<pre><code class="language-shell">u8, s16le, s16be, s24le, s24be, s24-32le, s24-32be, s32le, s32be float32le, float32be, ulaw, alaw
-</code></pre>
+<div class="highlight"><pre><span></span><code>u8, s16le, s16be, s24le, s24be, s24-32le, s24-32be, s32le, s32be float32le, float32be, ulaw, alaw
+</code></pre></div>
 <h3 id="default-sample-rate-and-alternate-sample-rate">default-sample-rate and alternate-sample-rate</h3>
 <p>This determines in ADC or DAC conversion sampling rate and the alternative sample rate. The sound system will determine which to use, either the default or alternative automatically.</p>
 <p>In this configuration, I have used 48000Hz. This is more than enough to get higher quality sound. You can learn more about sampling here: Sampling_(signal_processing)</p>
@@ -383,41 +383,41 @@ Byte Order:          Little Endian
 <h3 id="resample-method">resample-method</h3>
 <p>The resampling algorithm to use. I have selected soxr-vhq. It is the point sampler, which offers better sound quality than speex-* methods however it is CPU intensive.</p>
 <p>Available values:</p>
-<pre><code class="language-shell">src-sinc-best-quality, src-sinc-medium-quality, src-sinc-fastest, src-zero-order-hold, src-linear, trivial, speex-float-N, speex-fixed-N, ffmpeg, soxr-mq, soxr-hq, soxr-vhq.
-</code></pre>
+<div class="highlight"><pre><span></span><code>src-sinc-best-quality, src-sinc-medium-quality, src-sinc-fastest, src-zero-order-hold, src-linear, trivial, speex-float-N, speex-fixed-N, ffmpeg, soxr-mq, soxr-hq, soxr-vhq.
+</code></pre></div>
 <h3 id="enable-lfe-remixing">enable-lfe-remixing</h3>
 <p>This determines the upmixing or downmixing channel behaviour. If disabled output LFE channel is available the signal on the input LFE channel will be ignored.</p>
 <p>The Low-frequency effects (LFE) channel is the name of an audio track specifically intended for deep, low-pitched sounds ranging from 3–120 Hz</p>
 <h3 id="scheduling-configuration-of-pulse-daemon">Scheduling configuration of pulse daemon</h3>
-<pre><code class="language-shell">high-priority = yes
-nice-level = -11
-realtime-scheduling = yes
-realtime-priority = 9
-rlimit-rtprio = 9
-daemonize = no
-</code></pre>
+<div class="highlight"><pre><span></span><code>high-priority <span class="o">=</span> yes
+nice-level <span class="o">=</span> -11
+realtime-scheduling <span class="o">=</span> yes
+realtime-priority <span class="o">=</span> <span class="m">9</span>
+rlimit-rtprio <span class="o">=</span> <span class="m">9</span>
+<span class="nv">daemonize</span> <span class="o">=</span> no
+</code></pre></div>
 <p><em>high-priority</em> setting makes the pulse daemon is a high priority process. If you enable the realtime-scheduling, it can cause a system lock up. Although this gives you a high priority IO threads of pulse daemon.</p>
 <p>Finally you have to configure the alsa to get the best audio output:</p>
-<pre><code class="language-shell">nano /etc/asound.conf
-</code></pre>
+<div class="highlight"><pre><span></span><code>nano /etc/asound.conf
+</code></pre></div>
 <p>The default configuration will be something similar to following:</p>
-<pre><code class="language-shell"># Use PulseAudio by default
-pcm.!default {
-  type pulse
-  fallback "sysdefault"
-  hint {
+<div class="highlight"><pre><span></span><code><span class="c1"># Use PulseAudio by default</span>
+pcm.!default <span class="o">{</span>
+  <span class="nb">type</span> pulse
+  fallback <span class="s2">"sysdefault"</span>
+  hint <span class="o">{</span>
     show on
-    description "Default ALSA Output (currently PulseAudio Sound Server)"
-  }
-}
-</code></pre>
+    description <span class="s2">"Default ALSA Output (currently PulseAudio Sound Server)"</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
 <p>Change it to this:</p>
-<pre><code class="language-shell"># Use PulseAudio plugin hw
-pcm.!default {
-   type plug
+<div class="highlight"><pre><span></span><code><span class="c1"># Use PulseAudio plugin hw</span>
+pcm.!default <span class="o">{</span>
+   <span class="nb">type</span> plug
    slave.pcm hw
-}
-</code></pre>
+<span class="o">}</span>
+</code></pre></div>
 <p>slave.pcm <code>hw</code> plugin will communicates directly with ALSA kernel driver. It is a raw communication without any conversion thus giving you a low latency audio output.
 Then reboot your computer or restart Pulse and ALSA processes.</p>
 </article>

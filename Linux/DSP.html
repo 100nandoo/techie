@@ -290,7 +290,7 @@
 <article class="md-content__inner md-typeset">
 <h1 id="system-wide-audio-dsp">System wide audio DSP</h1>
 <p><a href="https://github.com/bmc0/dsp/wiki/System-Wide-DSP-Guide">System Wide DSP Guide</a></p>
-<pre><code>INSTALL DEPENDENCIES
+<div class="highlight"><pre><span></span><code>INSTALL DEPENDENCIES
 
 sudo apt-get update &amp;&amp; sudo apt install build-essential pkg-config git ladspa-sdk fftw3 fftw3-dev libzita-convolver-dev 
 sudo apt install libsndfile1 libsndfile1-dev libavcodec58 libavcodec-dev
@@ -310,15 +310,13 @@ add this -&gt;  effects_chain=gain -3.0 lowshelf 90 0.9s +3.0
 # INSTALLATION COMPLETE. TEST DSP.
 
 Coffee.mp3 gain -15 lowshelf 160 0.5 +6.0
-</code></pre>
+</code></pre></div>
 <h2 id="load-dsp-module">Load DSP module</h2>
 <ol>
 <li>load from pulseaudio daemon, change <code>(module-name)</code>, you can list all available module <code>pacmd list-sinks</code> 
-   How to choose? play music and, the one that has <code>running</code> status</li>
-</ol>
-<pre><code class="language-bash">pacmd load-module module-ladspa-sink sink_name=dsp master=(module-name) plugin=ladspa_dsp label=ladspa_dsp
-</code></pre>
-<ol>
+   How to choose? play music and, the one that has <code>running</code> status
+<div class="highlight"><pre><span></span><code>pacmd load-module module-ladspa-sink <span class="nv">sink_name</span><span class="o">=</span>dsp <span class="nv">master</span><span class="o">=(</span>module-name<span class="o">)</span> <span class="nv">plugin</span><span class="o">=</span>ladspa_dsp <span class="nv">label</span><span class="o">=</span>ladspa_dsp
+</code></pre></div></li>
 <li>Check whether the module load successfully
 <code>pacmd list-sinks | grep dsp</code></li>
 <li>restart pulseaudio
@@ -328,9 +326,8 @@ Coffee.mp3 gain -15 lowshelf 160 0.5 +6.0
 <h2 id="load-dsp-on-startup">Load DSP on Startup</h2>
 <ol>
 <li>edit <code>/etc/pulse/default.pa</code> configuration file</li>
-<li>add this</li>
-</ol>
-<pre><code>.ifexists module-ladspa-sink.so
+<li>add this
+<div class="highlight"><pre><span></span><code>.ifexists module-ladspa-sink.so
 .nofail
 # this line is the same as the one on `Load DSP module` section
 load-module module-ladspa-sink sink_name=dsp master=alsa_output.pci-0000_28_00.4.analog-stereo plugin=ladspa_dsp label=ladspa_dsp
@@ -339,18 +336,18 @@ load-module module-ladspa-sink sink_name=dsp master=alsa_output.pci-0000_28_00.4
 
 # Sink index number can be seen on `pacmd list-sinks`
 set-default-sink 2
-</code></pre>
+</code></pre></div></li>
+</ol>
 <h3 id="config-files">Config files:</h3>
-<pre><code class="language-bash">
-# Beyerdynamic DT 770 80 Ohm #1
-effects_chain=eq 20 1.28 3.3 eq 54 1.45 -3.3 eq 220 2.75 4.3 eq 3703 2.84 10.8 eq 18582 0.03 -4.5 eq 137 4.75 -1.4 eq 2254 2.98 -2.4 eq 2773 0.34 0.9 eq 7161 1.84 -3.8 eq 9225 1.26 2.8
+<div class="highlight"><pre><span></span><code><span class="c1"># Beyerdynamic DT 770 80 Ohm #1</span>
+<span class="nv">effects_chain</span><span class="o">=</span>eq <span class="m">20</span> <span class="m">1</span>.28 <span class="m">3</span>.3 eq <span class="m">54</span> <span class="m">1</span>.45 -3.3 eq <span class="m">220</span> <span class="m">2</span>.75 <span class="m">4</span>.3 eq <span class="m">3703</span> <span class="m">2</span>.84 <span class="m">10</span>.8 eq <span class="m">18582</span> <span class="m">0</span>.03 -4.5 eq <span class="m">137</span> <span class="m">4</span>.75 -1.4 eq <span class="m">2254</span> <span class="m">2</span>.98 -2.4 eq <span class="m">2773</span> <span class="m">0</span>.34 <span class="m">0</span>.9 eq <span class="m">7161</span> <span class="m">1</span>.84 -3.8 eq <span class="m">9225</span> <span class="m">1</span>.26 <span class="m">2</span>.8
 
-# Brainwavz B400
-effects_chain=eq 20 0.69 5.2 eq 207 0.54 -6.1 eq 2289 1.96 5.2 eq 5468 1.46 5.8 eq 12755 1.26 6.4 eq 879 2.94 1.8 eq 2333 1.58 0.7 eq 8435 5.68 -3.4 eq 9290 0.39 3.2 eq 16465 0.04 -2.3
+<span class="c1"># Brainwavz B400</span>
+<span class="nv">effects_chain</span><span class="o">=</span>eq <span class="m">20</span> <span class="m">0</span>.69 <span class="m">5</span>.2 eq <span class="m">207</span> <span class="m">0</span>.54 -6.1 eq <span class="m">2289</span> <span class="m">1</span>.96 <span class="m">5</span>.2 eq <span class="m">5468</span> <span class="m">1</span>.46 <span class="m">5</span>.8 eq <span class="m">12755</span> <span class="m">1</span>.26 <span class="m">6</span>.4 eq <span class="m">879</span> <span class="m">2</span>.94 <span class="m">1</span>.8 eq <span class="m">2333</span> <span class="m">1</span>.58 <span class="m">0</span>.7 eq <span class="m">8435</span> <span class="m">5</span>.68 -3.4 eq <span class="m">9290</span> <span class="m">0</span>.39 <span class="m">3</span>.2 eq <span class="m">16465</span> <span class="m">0</span>.04 -2.3
 
-# HiFi Tin T2
-effects_chain=eq 29 0.53 6.4 eq 274 0.60 -4.2 eq 1932 2.11 2.0 eq 3726 2.69 3.9 eq 6217 3.58 6.3 eq 970 5.54 1.1 eq 9464 4.50 2.5 eq 19213 0.36 -2.2 eq 19858 0.32 -6.6
-</code></pre>
+<span class="c1"># HiFi Tin T2</span>
+<span class="nv">effects_chain</span><span class="o">=</span>eq <span class="m">29</span> <span class="m">0</span>.53 <span class="m">6</span>.4 eq <span class="m">274</span> <span class="m">0</span>.60 -4.2 eq <span class="m">1932</span> <span class="m">2</span>.11 <span class="m">2</span>.0 eq <span class="m">3726</span> <span class="m">2</span>.69 <span class="m">3</span>.9 eq <span class="m">6217</span> <span class="m">3</span>.58 <span class="m">6</span>.3 eq <span class="m">970</span> <span class="m">5</span>.54 <span class="m">1</span>.1 eq <span class="m">9464</span> <span class="m">4</span>.50 <span class="m">2</span>.5 eq <span class="m">19213</span> <span class="m">0</span>.36 -2.2 eq <span class="m">19858</span> <span class="m">0</span>.32 -6.6
+</code></pre></div>
 </article>
 </div>
 </div>
