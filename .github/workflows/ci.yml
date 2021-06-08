@@ -18,5 +18,5 @@ jobs:
           pip install mkdocs-autolinks-plugin
           pip install mkdocs-mermaid2-plugin
       - name: Deploy 🚀
-        run: mkdocs gh-deploy --force
+        run: git pull gh-pages gh-deploy
           
