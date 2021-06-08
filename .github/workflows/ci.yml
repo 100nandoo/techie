@@ -1,4 +1,4 @@
-name: ci
+name: Build and Deploy
 on:
   push:
     branches:
@@ -8,11 +8,19 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2.3.1
       - uses: actions/setup-python@v2
         with:
           python-version: 3.x
-      - run: pip install mkdocs-material
-      - run: pip install mkdocs-autolinks-plugin
-      - run: pip install mkdocs-mermaid2-plugin
-      - run: mkdocs gh-deploy --force
+      - name: Install and Build 🔧
+        run: |
+          pip install mkdocs-material
+          pip install mkdocs-autolinks-plugin
+          pip install mkdocs-mermaid2-plugin
+          mkdocs build
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: gh-pages
+          folder: build
