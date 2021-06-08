@@ -10,7 +10,7 @@
 
 ** Use this command 
 
-```
+```sh
 sudo woeusb \
     --target-filesystem NTFS \
     --device Win10_1809Oct_v2_EnglishInternational_x64.iso /dev/sdX

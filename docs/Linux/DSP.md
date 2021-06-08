@@ -2,7 +2,7 @@
 
 [System Wide DSP Guide](https://github.com/bmc0/dsp/wiki/System-Wide-DSP-Guide)
 
-```
+```sh
 INSTALL DEPENDENCIES
 
 sudo apt-get update && sudo apt install build-essential pkg-config git ladspa-sdk fftw3 fftw3-dev libzita-convolver-dev 
@@ -28,7 +28,7 @@ Coffee.mp3 gain -15 lowshelf 160 0.5 +6.0
 ## Load DSP module
 1. load from pulseaudio daemon, change `(module-name)`, you can list all available module `pacmd list-sinks` 
    How to choose? play music and, the one that has `running` status
-```bash
+```sh
 pacmd load-module module-ladspa-sink sink_name=dsp master=(module-name) plugin=ladspa_dsp label=ladspa_dsp
 ```
 2. Check whether the module load successfully
@@ -41,7 +41,7 @@ pacmd load-module module-ladspa-sink sink_name=dsp master=(module-name) plugin=l
 ## Load DSP on Startup
 1. edit `/etc/pulse/default.pa` configuration file
 2. add this
-```
+```sh
 .ifexists module-ladspa-sink.so
 .nofail
 # this line is the same as the one on `Load DSP module` section

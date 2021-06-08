@@ -2,7 +2,7 @@
 
 First you have to do little bit of tweaking of the Pulse configuration, to match your preference by creating the daemon.conf file in your home config directory:
 
-```shell
+```sh
 nano ~/.config/pulse/daemon.conf
 ```
 
