@@ -13,6 +13,10 @@
 * [Filebrowser](https://github.com/filebrowser/filebrowser) - Web file browser
 
 
+### Netowrking
+* [Duck DNS](https://www.duckdns.org) for static ip replacement
+* [WireHole](https://github.com/IAmStoxe/wirehole) - Wireguard, pihole, unbound
+
 ## Resources
 [Reddit wiki resource](https://www.reddit.com/r/homelab/wiki/resources)
 
