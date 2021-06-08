@@ -111,6 +111,11 @@
       </a>
 </li>
 <li class="md-tabs__item">
+<a class="md-tabs__link" href="../Misc/os_installation.html">
+        Misc
+      </a>
+</li>
+<li class="md-tabs__item">
 <a class="md-tabs__link" href="../Raspberry/readme.html">
         Raspberry
       </a>
@@ -226,11 +231,36 @@
 <li class="md-nav__item md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
 <label class="md-nav__link" for="__nav_4">
+        Misc
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Misc" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Misc
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Misc/os_installation.html">
+        OS Installation
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Misc/software_developer.html">
+        Software Developer
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5">
         Raspberry
         <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="Raspberry" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_4">
+<label class="md-nav__title" for="__nav_5">
 <span class="md-nav__icon md-icon"></span>
           Raspberry
         </label>
@@ -292,24 +322,24 @@
 <p><a href="https://github.com/bmc0/dsp/wiki/System-Wide-DSP-Guide">System Wide DSP Guide</a></p>
 <div class="highlight"><pre><span></span><code>INSTALL DEPENDENCIES
 
-sudo apt-get update &amp;&amp; sudo apt install build-essential pkg-config git ladspa-sdk fftw3 fftw3-dev libzita-convolver-dev 
+sudo apt-get update <span class="o">&amp;&amp;</span> sudo apt install build-essential pkg-config git ladspa-sdk fftw3 fftw3-dev libzita-convolver-dev 
 sudo apt install libsndfile1 libsndfile1-dev libavcodec58 libavcodec-dev
 sudo apt-get install libavcodec-dev --fix-missing
 sudo apt-get install libavformat-dev libasound2-dev libao-common libao-dev libmad0-dev
 
-# DEPENDENCY INSTALLATION COMPLETE. RUN DSP SETUP.
+<span class="c1"># DEPENDENCY INSTALLATION COMPLETE. RUN DSP SETUP.</span>
 git clone https://github.com/bmc0/dsp.git
-cd dsp
+<span class="nb">cd</span> dsp
 make
 sudo make install
-cd ..
+<span class="nb">cd</span> ..
 mkdir ~/.config/ladspa_dsp/
 sudo nano ~/.config/ladspa_dsp/config
-add this -&gt;  effects_chain=gain -3.0 lowshelf 90 0.9s +3.0
+add this -&gt;  <span class="nv">effects_chain</span><span class="o">=</span>gain -3.0 lowshelf <span class="m">90</span> <span class="m">0</span>.9s +3.0
 
-# INSTALLATION COMPLETE. TEST DSP.
+<span class="c1"># INSTALLATION COMPLETE. TEST DSP.</span>
 
-Coffee.mp3 gain -15 lowshelf 160 0.5 +6.0
+Coffee.mp3 gain -15 lowshelf <span class="m">160</span> <span class="m">0</span>.5 +6.0
 </code></pre></div>
 <h2 id="load-dsp-module">Load DSP module</h2>
 <ol>
@@ -329,13 +359,13 @@ Coffee.mp3 gain -15 lowshelf 160 0.5 +6.0
 <li>add this
 <div class="highlight"><pre><span></span><code>.ifexists module-ladspa-sink.so
 .nofail
-# this line is the same as the one on `Load DSP module` section
-load-module module-ladspa-sink sink_name=dsp master=alsa_output.pci-0000_28_00.4.analog-stereo plugin=ladspa_dsp label=ladspa_dsp
+<span class="c1"># this line is the same as the one on `Load DSP module` section</span>
+load-module module-ladspa-sink <span class="nv">sink_name</span><span class="o">=</span>dsp <span class="nv">master</span><span class="o">=</span>alsa_output.pci-0000_28_00.4.analog-stereo <span class="nv">plugin</span><span class="o">=</span>ladspa_dsp <span class="nv">label</span><span class="o">=</span>ladspa_dsp
 .fail
 .endif
 
-# Sink index number can be seen on `pacmd list-sinks`
-set-default-sink 2
+<span class="c1"># Sink index number can be seen on `pacmd list-sinks`</span>
+set-default-sink <span class="m">2</span>
 </code></pre></div></li>
 </ol>
 <h3 id="config-files">Config files:</h3>
