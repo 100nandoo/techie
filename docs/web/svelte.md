@@ -82,7 +82,7 @@ export let message = "Hello neighbour"
 </button>
 ```
 
-#### Reactive Value
+### Reactive Value
 Auto update value when the child variable changed
 ```js
 let firstName = "Jimi"
@@ -90,7 +90,7 @@ let secondName = "Hendrix"
 $: fullname = `${firstName} ${secondName}`
 ```
 
-#### Slot
+### Slot
 Passing down content from parent to child component
 ```javascript
 // Parent component
