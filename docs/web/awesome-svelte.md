@@ -8,4 +8,4 @@
 ## Dev Tools
 | **Link**                                    | **Description**                          |
 |---------------------------------------------|------------------------------------------|
-| [https://kit-docs.svelteness.dev](Kit Docs) | Documentation integration for SvelteKit. |
+| [https://kit-docs.svelteness.dev](Kit Docs) | Documentation integration for SvelteKit  |
