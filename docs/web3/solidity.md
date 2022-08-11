@@ -1,6 +1,16 @@
 # Solidity
+## Layout of Solidity Source File
+#### Import Paths
+<details>
+  <summary>Example</summary>
+  
+  ```solidity
+  import "./crosscontract.sol";
+  ```
+</details>
 
-## Contract
+
+## Contracts
 
 <details>
   <summary>Contract Structure</summary>
@@ -12,9 +22,27 @@
   contract helloWorld {}
   ```
 </details>
-### Function
+
 <details>
-  <summary>Public Function</summary>
+  <summary>Function Modifier</summary>
+  
+  ```solidity
+  pragma solidity ^0.8.15;
+  
+  modifier onlyOwner {
+        require(
+            msg.sender == owner,
+            "Only owner can call this function."
+        );
+        _;
+    }
+  ```
+</details>
+
+### Visibility and Getters
+#### Function Visibility
+<details>
+  <summary>Public</summary>
   
   ```solidity
   function eat(string memory _name, uint _amount) public {
@@ -24,7 +52,7 @@
 </details>
 
 <details>
-  <summary>Private Function</summary>
+  <summary>Private</summary>
   
   ```solidity
   function eat(string memory _name, uint _amount) private {
@@ -33,6 +61,44 @@
   ```
 </details>
 
+<details>
+  <summary>Internal</summary>
+  
+  ```solidity
+  function eat(string memory _name, uint _amount) internal {
+
+  }
+  ```
+</details>
+<details>
+  <summary>External</summary>
+  
+  ```solidity
+  function eat(string memory _name, uint _amount) external {
+
+  }
+  ```
+</details>
+
+#### Inheritance
+<details>
+  <summary>Example</summary>
+  
+  ```solidity
+  contract Animal {
+    function makeSound() public returns (string memory){
+
+    }
+  }
+  // Dog inherit Animal, so have access to both makeSound function and bark
+  contract Dog is Animal {
+    function bark() public returns (string memory){
+      
+    }
+  }
+  ```
+</details>
+### Function
 <details>
   <summary>State Mutability</summary>
   
@@ -82,3 +148,14 @@ uint = uint256
   uint[] dynamicArray;
   ```
 </details>
+
+### Expressions and Control Structures
+#### Require
+<details>
+  <summary>Example</summary>
+  
+  ```solidity
+  require(3 > 0);
+  ```
+</details>
+#### Assert
