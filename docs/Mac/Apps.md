@@ -17,3 +17,6 @@
 ## Design Tools
 * Figma - Design Tools
 * Zeplin - Design Tools
+
+## Others
+* [AlDente](https://github.com/davidwernhart/AlDente) - Better Battery Life
