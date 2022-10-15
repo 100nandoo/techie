@@ -1,0 +1,8 @@
+feh --bg-scale ~/Pictures/wall.jpg
+udiskie --tray --use-udisks2 &
+./.config/bspwm/panel.sh | lemonbar -p &
+sxhkd &
+xsetroot -cursor_name left_ptr &
+compton &
+exec xrdb ~/.Xresources &
+exec bspwm

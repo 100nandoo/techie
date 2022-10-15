@@ -1,0 +1,3 @@
+exec compton &
+exec firefox &
+exec startxfce4
