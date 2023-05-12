@@ -20,3 +20,4 @@
 
 ## Others
 * [AlDente](https://github.com/davidwernhart/AlDente) - Better Battery Life
+* [Wireguard](https://github.com/WireGuard/wireguard-apple) - [Download](https://github.com/100nandoo/techie/files/mac/Wireguard.dmg.zip) - VPN Tunnel
