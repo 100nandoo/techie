@@ -1,24 +1,27 @@
-name: Build and Deploy
+name: ci 
 on:
   push:
     branches:
-      - master
+      - master 
       - main
+permissions:
+  contents: write
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
         with:
           python-version: 3.x
-      - name: Install and Build 🔧
-        run: |
+      - uses: actions/cache@v3
+        with:
+          key: mkdocs-material-${{ github.ref }} 
+          path: .cache
+          restore-keys: |
+            mkdocs-material-
+      - run: |
           pip install mkdocs-material
           pip install mkdocs-autolinks-plugin
           pip install mkdocs-mermaid2-plugin
-      - name: Deploy 🚀
-        run: |
-          git pull
-          mkdocs gh-deploy --force
-          
+      - run: mkdocs gh-deploy --force
