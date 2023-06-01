@@ -7,6 +7,7 @@
 * [Maccy](https://maccy.app/) - Clipboard manager
 * GitKraken - Git GUI
 * iTerm - Terminal Emulator
+* [Shortcut Toggle Fn](https://www.icloud.com/shortcuts/5e2007526aaf46fcb97e901f63a43b7b)
 
 ## IDE
 * [GraphQL Playground](https://github.com/graphql/graphql-playground) - GraphQL IDE
