@@ -1,7 +1,6 @@
 # Backup
 
 ## Accounts
-- Change Detection
 - [Notion](https://www.notion.so/help/export-your-content#export-your-entire-workspace)
 - [Github](https://github.com/settings/admin)
 - [Google Photo](https://takeout.google.com/settings/takeout)
@@ -13,3 +12,7 @@
 - Nova
 - InnerTune
 - Tasker
+
+## Self Hosted
+- Change Detection
+- Home Assistant
