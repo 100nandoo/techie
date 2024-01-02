@@ -16,3 +16,4 @@
 ## Self Hosted
 - Change Detection
 - Home Assistant
+- Syncthing
