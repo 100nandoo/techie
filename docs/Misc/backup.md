@@ -17,3 +17,6 @@
 - Change Detection
 - Home Assistant
 - Syncthing
+
+## Macs
+- Raycast
