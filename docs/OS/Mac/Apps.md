@@ -22,3 +22,4 @@
 ## Others
 * [AlDente](https://github.com/davidwernhart/AlDente) - Better Battery Life
 * [Wireguard](https://github.com/WireGuard/wireguard-apple) - [Download](https://github.com/100nandoo/techie/raw/master/files/mac/Wireguard.dmg.zip) - VPN Tunnel
+* [Media Key Forwarder](https://github.com/quentinlesceller/macmediakeyforwarder) - Prioritize Spotify over Music on Media Key
